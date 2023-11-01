@@ -25,25 +25,24 @@ val libs = listOf (
 //    "io.grpc:grpc-protobuf-lite:${Version.grpc}",
 //    "com.google.protobuf:protoc:${Version.protobuf}",
 //    "com.google.protobuf:protobuf-java:${Version.protobuf}",
+//    "javax.annotation:javax.annotation-api:${Version.javax}",
 //    "com.google.protobuf:protobuf-javalite:${Version.protobuf}",
 //    "com.google.protobuf:protobuf-gradle-plugin:${Version.protobufPlugin}",
 
-//    "io.grpc:grpc-stub:${Version.grpc}",
-//    "io.grpc:grpc-netty:${Version.grpc}",
-//    "javax.annotation:javax.annotation-api:${Version.javax}",
 
+    "io.grpc:grpc-netty:${Version.grpc}",
     "io.grpc:protoc-gen-grpc-java:${Version.grpc}",
     "io.grpc:grpc-kotlin-stub:${Version.grpcKotlin}",
     "com.google.protobuf:protobuf-kotlin:${Version.protobuf}",
     "io.grpc:protoc-gen-grpc-kotlin:${Version.grpcKotlin}:jdk8@jar",
     "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}",
 )
+//    "io.grpc:grpc-stub:${Version.grpc}",
 
 dependencies {
     libs.forEach {
         implementation(it)
     }
-
 }
 
 protobuf {

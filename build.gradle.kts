@@ -21,14 +21,14 @@ object Version {
     const val protobufPlugin = "0.9.2"
 }
 
-val libs = listOf (
+val gRpcLibs = listOf (
+//    "io.grpc:grpc-stub:${Version.grpc}",
 //    "io.grpc:grpc-protobuf-lite:${Version.grpc}",
 //    "com.google.protobuf:protoc:${Version.protobuf}",
 //    "com.google.protobuf:protobuf-java:${Version.protobuf}",
 //    "javax.annotation:javax.annotation-api:${Version.javax}",
 //    "com.google.protobuf:protobuf-javalite:${Version.protobuf}",
 //    "com.google.protobuf:protobuf-gradle-plugin:${Version.protobufPlugin}",
-
 
     "io.grpc:grpc-netty:${Version.grpc}",
     "io.grpc:protoc-gen-grpc-java:${Version.grpc}",
@@ -37,12 +37,12 @@ val libs = listOf (
     "io.grpc:protoc-gen-grpc-kotlin:${Version.grpcKotlin}:jdk8@jar",
     "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Version.coroutines}",
 )
-//    "io.grpc:grpc-stub:${Version.grpc}",
 
 dependencies {
-    libs.forEach {
-        implementation(it)
-    }
+    // GRPC
+    gRpcLibs.forEach(::implementation)
+    // SERVICE LOCATOR
+    implementation("io.insert-koin:koin-core:3.5.0")
 }
 
 protobuf {
@@ -71,6 +71,5 @@ protobuf {
 }
 
 application {
-    // функция fun main неявно создает вокруг себя класс по имени файлы, сбольшой буквы + Kt  в конце
     mainClass.set("MainKt")
 }

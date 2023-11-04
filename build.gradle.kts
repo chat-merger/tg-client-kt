@@ -43,6 +43,11 @@ dependencies {
     gRpcLibs.forEach(::implementation)
     // SERVICE LOCATOR
     implementation("io.insert-koin:koin-core:3.5.0")
+    // TELEGRAM BOT API
+    implementation("org.telegram:telegrambots:6.8.0")
+    implementation("org.telegram:telegrambots-abilities:6.8.0")
+    implementation("org.telegram:telegrambotsextensions:6.8.0")
+
 }
 
 protobuf {

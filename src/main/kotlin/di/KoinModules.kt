@@ -6,7 +6,7 @@ import domain.Distributor
 import org.koin.dsl.module
 
 object KoinModules {
-    fun main(cfg: Config) = module {
+    fun core(cfg: Config) = module {
         single<Config> { cfg }
     }
     val baseRepositories = module {

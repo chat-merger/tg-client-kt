@@ -1,7 +1,7 @@
-package data
+package data.merger
 
-import data.mapping.toEvent
-import data.mapping.toRequest
+import data.merger.mapping.toEvent
+import data.merger.mapping.toRequest
 import domain.Distributor
 import io.grpc.Channel
 import io.grpc.ManagedChannelBuilder

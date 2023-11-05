@@ -1,4 +1,4 @@
-package data.mapping
+package data.merger.mapping
 
 import domain.Distributor
 import mergerapi.*
@@ -21,7 +21,8 @@ private fun NewMessageEvent.toDomain() =
         id = id,
         createdAt = createdAt.seconds,
         clientName = clientName,
-        author = authorCase.name,
+        author = if (NewMessageEvent.AuthorCase.AUTHOR_VALUE ==  authorCase)
+            authorValue.toDomain() else null,
         action = if (NewMessageEvent.ActionCase.ACTION_VALUE == actionCase)
             actionValue.toDomain() else null,
         modifiers = modifiersList.mapNotNull { it.toDomain() },
@@ -89,3 +90,9 @@ fun Action.toDomain(): Distributor.Action? =
         Action.JOIN_MEMBER -> Distributor.Action.JOIN_MEMBER
         Action.UNRECOGNIZED -> null
     }
+
+fun Author.toDomain(): Distributor.Author? =
+    Distributor.Author(
+        id = authorId,
+        name = authorName,
+    )

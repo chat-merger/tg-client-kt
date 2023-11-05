@@ -1,7 +1,7 @@
 package di
 
 import config.Config
-import data.DistributorRepositoryBase
+import data.merger.DistributorRepositoryBase
 import domain.Distributor
 import org.koin.dsl.module
 

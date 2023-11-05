@@ -1,4 +1,4 @@
-package data.mapping
+package data.merger.mapping
 
 
 import com.google.protobuf.timestamp

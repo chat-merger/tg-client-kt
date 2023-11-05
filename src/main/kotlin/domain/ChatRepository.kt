@@ -1,4 +1,5 @@
 package domain
 
-class ChatRepository {
+object Chat {
+    interface Repository : Distributor.Repository
 }

@@ -28,7 +28,7 @@ object Distributor {
             val id: String,
             val createdAt: Long,
             val clientName: String,
-            val author: String?,
+            val author: Author?,
             val action: Action?,
             val modifiers: List<Modifier>,
             // editable:

@@ -13,8 +13,8 @@ import org.telegram.telegrambots.meta.api.objects.Update
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession
 
 class ChatRepositoryBase(
-    val name: String,
-    val token: String,
+    name: String,
+    token: String,
 ) : Chat.Repository {
 
     private val rawInputFlow = MutableSharedFlow<Distributor.Input>()
